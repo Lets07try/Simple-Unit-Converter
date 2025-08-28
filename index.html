@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Unit Converter</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        input { margin: 5px; padding: 5px; }
+        button { padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <h1>Simple Kilometer to Miles Converter</h1>
+    <input type="number" id="kmInput" placeholder="Enter Kilometers">
+    <button onclick="convert()">Convert</button>
+    <h2 id="result">Result: -- Miles</h2>
+
+    <script>
+        function convert() {
+            const km = document.getElementById('kmInput').value;
+            if (km === '') {
+                document.getElementById('result').innerText = 'Result: -- Miles';
+                return;
+            }
+            const miles = km * 0.62137;
+            document.getElementById('result').innerText = `Result: ${miles.toFixed(2)} Miles`;
+        }
+    </script>
+</body>
+</html>
